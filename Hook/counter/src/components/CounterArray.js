@@ -7,7 +7,7 @@ const CounterArray = () => {
     const addItem=()=>{
         setItems([...items,{
             id:items.length,
-            value:Math.floor(Math.random()*10)+1
+            value:Math.floor(Math.random()*1000)+1
         }])
     }
 

@@ -1,3 +1,4 @@
+//using previous state values
 import React, { useState } from 'react'
 
 const CounterHook = () => {
@@ -7,8 +8,8 @@ const CounterHook = () => {
     <div>
       <p>Count : {count}</p>
       <button onClick={() => setCount(initialCount)}>Reset</button>
-      <button onClick={() => setCount(count+1)}>Increase</button>
-      <button onClick={() => setCount(count-1)}>Decrease</button>
+      <button onClick={() => setCount(prevCount => prevCount+1)}>Increase</button>
+      <button onClick={() => setCount(prevCount => prevCount-1)}>Decrease</button>
     </div>
   )
 }

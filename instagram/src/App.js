@@ -1,4 +1,4 @@
-
+import VideoCard from "./components/VideoCard";
 import "./app.css";
 
 function App() {
@@ -11,7 +11,8 @@ function App() {
       </div>
 
       <div className="app_videos">
-        
+        <VideoCard/>
+       
       </div>
       
     </div>

@@ -12,7 +12,7 @@ const App = () => {
       <h1>What's up Today? </h1>
      </div>
       <Todo list={list} setList={setList}/>
-      <TodoList list={list}/>
+      <TodoList list={list} setList={setList}/>
     </div>
   )
 }

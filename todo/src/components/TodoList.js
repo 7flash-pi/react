@@ -1,8 +1,12 @@
 import React ,{ useState } from 'react'
 
-const TodoList = ({list}) => {
+const TodoList = ({list,setList}) => {
 
     const [done,setDone]=useState(false);
+    const delTask=(id)=>{
+        let newList=list.filter((task)=> task.id!==id);
+        setList(newList);
+    }
   return (
     <>
         
@@ -15,7 +19,7 @@ const TodoList = ({list}) => {
                     </div>
                     <div className="btn">
                         <button className='Completed-btn' onClick={()=>setDone(!done)}> Done</button>
-                        <button className='del-btn'>Delete</button>
+                        <button className='del-btn' onClick={delTask(id)}>Delete</button>
                         <button className='edit-btn'>Edit</button>
 
                     </div>

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600;700&family=Fragment+Mono:ital@0;1&family=Oleo+Script&family=Oswald:wght@300&family=Roboto+Condensed&family=Space+Mono&family=Urbanist:ital,wght@0,100;0,200;0,300;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4em;
+  font-family: 'Edu TAS Beginner', cursive;
+  font-family: 'Fragment Mono', monospace;
+  font-family: 'Oleo Script', cursive;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Space Mono', monospace;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.App>h2{
+  font-size: 40px;
+}
+
+.stopwatch-container{
+  margin-top: 2em;
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.stopwatch-container >p{
+  font-size: 35px;
+}
+.stopwatch-btn{
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn{
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+.start{
+  background-color: green;
+  color: white;
+}
+.reset{
+  background-color: red;
+  color: white;
+
+}

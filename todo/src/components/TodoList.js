@@ -1,26 +1,26 @@
-import React ,{ useState } from 'react'
+import React  from 'react';
+import { useGlobalContext } from './context';
 
-const TodoList = ({list,setList}) => {
+const TodoList = () => {
+    
+    const {list,completedTask,removeTask,setInput }=useGlobalContext();
 
-    const [done,setDone]=useState(false);
-    const delTask=(id)=>{
-        let newList=list.filter((task)=> task.id!==id);
-        setList(newList);
-    }
   return (
+    
     <>
         
          {
             list.map((singleTask)=>{
-                const {id,task}=singleTask;
-                return <div className='SigleTodo' key={id}>
+                return <div className='SigleTodo' key={singleTask.id}>
                     <div className="task">
-                        <p className={done ? 'done' :'not-done'}>{task}</p>
+                        <p className={ singleTask.state ? 'done' :'not-done'}>{singleTask.task}</p>
                     </div>
                     <div className="btn">
-                        <button className='Completed-btn' onClick={()=>setDone(!done)}> Done</button>
-                        <button className='del-btn' onClick={delTask(id)}>Delete</button>
-                        <button className='edit-btn'>Edit</button>
+                        <button className='Completed-btn' onClick={ event => completedTask(event,singleTask.id)}> Done</button>
+                        <button className='del-btn'  onClick={event => removeTask(event,singleTask.id)}>Delete</button>
+                        <button className='edit-btn' onClick={(e)=> {
+                            setInput(singleTask);
+                        }}>Edit</button>
 
                     </div>
                 </div>

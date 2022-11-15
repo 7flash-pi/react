@@ -1,18 +1,11 @@
-import React , { useState } from 'react'
+import React  from 'react';
+import { useGlobalContext } from './context';
 
-const Todo = ({list ,setList}) => {
+const Todo = () => {
 
-    const [input,setInput]=useState('');
+    const { addNewTask ,input,setInput}=useGlobalContext();
     
 
-    const addNewTask=(e)=>{
-        e.preventDefault();
-        const newInput= { id : new Date().getTime().toString(),
-        task:input};
-        setList([...list,newInput]);
-        setInput('');
-        
-    }
   return (
     <div className='todo-container'>
         <form className='todo-form'>

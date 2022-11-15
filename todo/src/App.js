@@ -1,9 +1,9 @@
-import React ,{ useState} from 'react';
+import React  from 'react';
 import Todo from './components/Todo';
 import TodoList from './components/TodoList';
 
 const App = () => {
-  const [list,setList]=useState([]);
+
 
   
   return (
@@ -11,8 +11,8 @@ const App = () => {
      <div className="header">
       <h1>What's up Today? </h1>
      </div>
-      <Todo list={list} setList={setList}/>
-      <TodoList list={list} setList={setList}/>
+      <Todo />
+      <TodoList />
     </div>
   )
 }

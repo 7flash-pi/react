@@ -7,6 +7,8 @@ const AppProvider=({children}) =>{
     const [list,setList]=useState([]);
     const [input,setInput]=useState('');
     const [load,setLoad]=useState();
+    const [edit,setEdit]=useState(false);
+    const[editId,setEditId]=useState(null);
     
     useEffect( ()=>{},[load])
 
@@ -32,14 +34,27 @@ const AppProvider=({children}) =>{
     }
     const addNewTask=(event)=>{
         event.preventDefault();
-        if(input){
-        const newInput= { id : new Date().getTime().toString(),
-        task:input, state:false};
-        setList([...list,newInput]);
-        setInput('');
-        setLoad(false);
+        if(input && edit){
+                
+                setList(list.map((item) => {
+                    if (item.id === editId) {
+                        return { ...item, task: input };
+                    }
+                    return item;
+                    }))
+                setInput('');
+                setEditId(null);
+                setEdit(false);
         }
+        else{
+            const newInput= { id : new Date().getTime().toString(),
+            task:input, state:false};
+            setList([...list,newInput]);
+            setInput('');
+            setLoad(false);
+            setEdit(false);
         
+        }
     }
 
     return <AppContext.Provider value={{
@@ -50,6 +65,8 @@ const AppProvider=({children}) =>{
         setInput,
         completedTask,
         removeTask,
+        setEdit,
+        setEditId
     }}>
         {children}
     </AppContext.Provider>

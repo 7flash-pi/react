@@ -30,7 +30,7 @@
   border-radius: 20px;
 }
 .stopwatch-container >p{
-  font-size: 35px;
+  font-size: 40px;
 }
 .stopwatch-btn{
   margin-top: 1em;
@@ -38,16 +38,23 @@
   justify-content: space-evenly;
 }
 .btn{
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
   border: none;
+  text-transform: capitalize;
 }
 .start{
-  background-color: green;
   color: white;
 }
 .reset{
-  background-color: red;
+  background-color: rgb(38, 102, 241);
   color: white;
 
+}
+.red{
+  background-color:rgb(255, 33, 33);
+}
+.green{
+
+  background-color: rgb(76, 212, 76);
 }

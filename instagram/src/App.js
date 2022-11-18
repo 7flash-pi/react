@@ -12,6 +12,7 @@ function App() {
 
       <div className="app_videos">
         <VideoCard/>
+        <VideoCard/>
        
       </div>
       

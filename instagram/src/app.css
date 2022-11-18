@@ -5,7 +5,7 @@ html{
 .app{
     display: grid;
     place-items: center;
-    height:100vh;
+    height:120vh;
     background-color: #000;
 }
 
@@ -19,7 +19,7 @@ html{
 }
 .app_videos{
     position: relative;
-    height:75vh;
+    height:85vh;
     background-color: white;
     width: 70%;
     border-radius: 20px;

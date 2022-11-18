@@ -1,0 +1,12 @@
+.videoFooter_text{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    color: white !important;
+    margin-bottom: 20px;
+
+}
+.videoFooter_text > h3{
+    margin-left: 10px;
+    padding-bottom: 20px;
+}

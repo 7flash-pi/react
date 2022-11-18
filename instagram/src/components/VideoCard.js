@@ -3,7 +3,7 @@ import '../style/VideoCard.css';
 import VideoHeader from './VideoHeader';
 import VideoFooter from './VideoFooter';
 
-const VideoCard = () => {
+const VideoCard = ({channel, song , avatarSrc, likes ,shares , url}) => {
 
   const videoRef=useRef(null);
   const [isVideoPlaying,setIsVideoPlaying]=useState(false);
@@ -26,10 +26,15 @@ const VideoCard = () => {
          ref={videoRef}
          onClick={onVideoPress}
          className='videocard_player'
-         src='./reels.mp4'
+         src={url}
           loop alt="ig Reel Video" />
 
-       <VideoFooter />
+       <VideoFooter 
+       channel={channel}
+       song={song}  
+       avatarSrc={avatarSrc}
+       likes={likes} 
+       shar={shares}/>
     
       
     </div>

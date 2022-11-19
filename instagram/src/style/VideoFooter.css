@@ -1,3 +1,10 @@
+.videoFooter{
+    position: relative;
+    margin-left: 20px;
+    bottom: 100;
+
+}
+
 .videoFooter_text{
     position: absolute;
     bottom: 0;
@@ -9,4 +16,18 @@
 .videoFooter_text > h3{
     margin-left: 10px;
     padding-bottom: 20px;
+}
+.videoFooter_text >h3 > button{
+    color: white;
+    font-weight: 900;
+    text-transform: inherit;
+
+}
+
+.videoFooter_ticker > .ticker{
+    width: 60%;
+    height: fit-content;
+    margin-left: 30px;
+    margin-bottom: 20px;
+
 }

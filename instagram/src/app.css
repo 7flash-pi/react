@@ -21,10 +21,10 @@ html{
     position: relative;
     height:85vh;
     background-color: white;
-    width: 70%;
+    width: 80%;
     border-radius: 20px;
     max-width: 450px;
-    max-height: 1400px;
+    max-height: 900px;
     overflow: scroll;
     scroll-snap-type: mandatory;
 

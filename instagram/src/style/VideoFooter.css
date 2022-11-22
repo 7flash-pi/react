@@ -9,7 +9,7 @@
     position: absolute;
     bottom: 0;
     display: flex;
-    color: white !important;
+    color: white    ;
     margin-bottom: 20px;
 
 }
@@ -23,11 +23,28 @@
     text-transform: inherit;
 
 }
+.videoFooter_ticker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .videoFooter_ticker > .ticker{
-    width: 60%;
+    width: 80%;
     height: fit-content;
     margin-left: 30px;
     margin-bottom: 20px;
+    background-color: black;
 
+}
+
+.videoFooter_icon{
+    position: relative;
+    left: 5px;
+    color: white;
+}
+.videoFooter_ticker > .ticker [title]{
+    padding-top: 7px;
+    font-size: 12px;
+    color: white;
 }

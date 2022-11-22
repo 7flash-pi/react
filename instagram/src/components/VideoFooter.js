@@ -20,7 +20,7 @@ const VideoFooter = ({channel, avatarSrc, song, likes, shares}) => {
        <Ticker  isNewsTicker={true} className="ticker">
         <NewsTicker id="1"  title={song}  />   
         
-       </Ticker>
+         </Ticker>
 
       </div>
       

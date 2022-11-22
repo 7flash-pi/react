@@ -5,12 +5,11 @@ html{
 .app{
     display: grid;
     place-items: center;
-    height:120vh;
+    height:100vh;
     background-color: #000;
 }
 
-
-.app_top > h1{
+    .app_top > h1{
     text-align: center;
     color:white;
 }
@@ -19,14 +18,13 @@ html{
 }
 .app_videos{
     position: relative;
-    height:85vh;
-    background-color: white;
-    width: 80%;
+    height:65vh;
+    width: 70%;
     border-radius: 20px;
     max-width: 450px;
-    max-height: 900px;
+    max-height: 1200px;
     overflow: scroll;
-    scroll-snap-type: mandatory;
+    scroll-snap-type:y  mandatory;
 
 
 }

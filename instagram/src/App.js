@@ -15,7 +15,7 @@ function App() {
         channel='7lash'
         avatarSrc='https://pickaface.net/gallery/avatar/20140324_132401_4419_unope.png'
         song='Ae ae ae - sifu '
-        url='./reel.mp4'
+        url='./ree.mp4'
         likes={987}
         shares={45}
         />

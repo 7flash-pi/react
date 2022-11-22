@@ -6,9 +6,9 @@
     scroll-snap-align: start;
 }
 .videocard_player{
+    object-fit: fill;
     height: 100%;
     width: 100%;
-    object-fit: fill;
 
 
 }

@@ -1,3 +1,8 @@
+.feed::-webkit-scrollbar{
+    display: none;
+}
+
+
 .feed{
     flex: 0.4;
     border-right: 1px solid var(--twitter-background);
@@ -11,5 +16,6 @@
     top: 0;
     background-color: white;
     z-index: 100;
-    border-right: 1px solid var(--twitter-background);  
+    border: 1px solid var(--twitter-background);
+    padding: 10px 15px;  
 }

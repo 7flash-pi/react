@@ -1,6 +1,7 @@
 import React from 'react';
 import "../styles/feed.css";
 import TweetBox from './TweetBox';
+import Post from './Post';
 
 
 const Feed = () => {
@@ -10,6 +11,8 @@ const Feed = () => {
         <h2>Home</h2>
       </div>
       <TweetBox />
+      <Post />
+
     </div>
   )
 }

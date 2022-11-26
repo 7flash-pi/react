@@ -1,5 +1,34 @@
-.widget{
+.widget {
     flex: 3;
-    border-right: 1px solid var(--twitter-background);
-    max-width: 250px;
+}
+.widget__input{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--twitter-background);
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+.widget__input > input{
+    border: none;
+    background-color: var(--twitter-background);
+}
+.widget__searchIcon{
+    color: grey !important;
+}
+.widget__widgetContainer{
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f5f8fa;
+    border-radius: 20px;
+}
+.widget__widgetContainer > h2{
+    font-size: 18px;
+    font-weight: 800;
+}
+.twitterShare__Btn{
+  margin-top: 30px;
 }

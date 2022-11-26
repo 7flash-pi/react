@@ -16,23 +16,23 @@ const Post = ({displayName,
   return (
     <div className='post'>
       <div className="post__avatar">
-        <Avatar src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgI432NVuvy_67OPXUVhtUBMA83m2cS-m5-Q&usqp=CAU'/>
+        <Avatar src={avatar}/>
       </div>
       <div className="post__body">
             <div className="post__header">
                 <div className="post__headerText">
-                    <h3>Sifu Raza{" "}
+                    <h3>{displayName}{" "}
                      <span className='post__headerSpecial'>
-                         <VerifiedRounded  className='post_badge'/>@SifuRaza   </span>
+                       { verified && <VerifiedRounded  className='post_badge'/> }  @{userName}   </span>
                      </h3>
                 </div>
 
                 <div className="post__headerDescription">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure libero dolores quos consequatur blanditiis fuga hic quisquam animi, dolorem et.</p>
+                    <p>{text}</p>
                 </div>
             </div>
 
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWCSoAcwVcztL6bDnd9BCVb6xaov4RFH7aDw&usqp=CAU" alt="" />
+            <img src={image} alt="" />
 
             <div className="post__footer">
                 <ChatBubbleOutline fontSize='small'/>

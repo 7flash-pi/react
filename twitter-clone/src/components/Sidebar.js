@@ -15,7 +15,7 @@ import { Button } from '@mui/material';
 const Sidebar = () => {
   return (
     <div className='sidebar'>
-        <TwitterIcon className='sidebar-twitterIcon'/>
+        <TwitterIcon className='sidebar__twitterIcon'/>
         <SidebarOption active Icon={ HomeIcon } text='Home' />
         <SidebarOption Icon={ SearchIcon } text='Explore'/>
         <SidebarOption Icon={ NotificationsNoneIcon } text='Notifications' />  
@@ -25,7 +25,7 @@ const Sidebar = () => {
         <SidebarOption Icon={ PermIdentityIcon } text='Profile'/>
         <SidebarOption Icon={ MoreHorizIcon } text='More'/>
         
-        <Button variant="outlined" className='sidebar-tweet' fullWidth>Tweet</Button>
+        <Button variant="outlined" className='sidebar__tweet' fullWidth>Tweet</Button>
 
       
     </div>

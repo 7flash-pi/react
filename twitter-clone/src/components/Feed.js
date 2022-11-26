@@ -12,7 +12,6 @@ const Feed = () => {
       </div>
       <TweetBox />
       <Post />
-
     </div>
   )
 }

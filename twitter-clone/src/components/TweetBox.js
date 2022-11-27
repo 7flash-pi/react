@@ -1,15 +1,28 @@
 import React , { useState } from 'react';
 import '../styles/tweetbox.css'
 import { Avatar,Button } from '@mui/material';
+import db from '../firebase';
+import { doc, addDoc,collection} from 'firebase/firestore';
 
 const TweetBox = () => {
   const [tweetDesc,setTweetDesc]=useState('');
   const [imgUrl,setImgUrl]=useState('');
 
-  const sendTweet=(e)=>{
+  const sendTweet=async(e)=>{
     e.preventDefault();
-
-  }
+          await addDoc(collection(db,'posts'),{
+            displayName:'Ashish Raj' ,
+            userName:'7lash' ,
+            text: tweetDesc ,
+            image: imgUrl,
+            verified:true ,
+            avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThrHxSnxSJWZ3xXBACzaG48dzoeSlYAJstmQ&usqp=CAU",
+          
+          });
+    setTweetDesc('');
+    setImgUrl('');
+    
+}
 
 
 

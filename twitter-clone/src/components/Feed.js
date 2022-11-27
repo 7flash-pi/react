@@ -28,7 +28,7 @@ useEffect(() => {
       <TweetBox />
 
     {posts.map((singlePost)=>
-      <Post key={singlePost.userName}
+      <Post key={singlePost.text}
         displayName={singlePost.displayName}
         userName={singlePost.userName}
         verified={singlePost.verified}

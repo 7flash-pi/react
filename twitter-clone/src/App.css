@@ -7,7 +7,7 @@ body {
     display: flex;
     height: 100vh;
     max-width: 70vh;
-    margin: 0 15vh ;
+    margin-left: 25vh;
     padding: 0 10px;
 }
 

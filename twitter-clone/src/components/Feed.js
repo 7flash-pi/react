@@ -4,35 +4,21 @@ import TweetBox from './TweetBox';
 import Post from './Post';
 import { useState , useEffect } from "react";
 import db from '../firebase';
-import {  getDocs ,collection } from "firebase/firestore";
+import {  onSnapshot, collection, query } from "firebase/firestore";
 
 
 const Feed = () => {
 const [posts,setPosts]=useState([]);
 
-  /*const getPosts= async() =>{
-    const colRef = collection(db,'posts');
-    const docsSnap = await getDocs(colRef);
-    docsSnap.forEach(docs => {
-      setPosts(docs.data());
-      console.log(docs.data());
-      }) 
-  } */
-async function getPosts() {
-    const snapshot = await db.collection('posts').get()
-    snapshot.forEach(doc => {
-       const document = { [doc.id]: doc.data() };
-       setPosts([...posts,document])
-    })
-}
-
-
-
-useEffect(()=>{
-  getPosts();
-        
-
+useEffect(() => {
+        const q = query(collection(db, "posts"))
+     const unsub = onSnapshot(q, (querySnapshot) => {
+     const newPosts=querySnapshot.docs.map(d => d.data());
+     setPosts(newPosts);
+     console.log(posts);;
+  });
 },[])
+
 
   return (
     <div className='feed'>
@@ -41,15 +27,21 @@ useEffect(()=>{
       </div>
       <TweetBox />
 
-      <Post 
-        displayName={posts.displayName}
-        userName={posts.userName}
-        verified={posts.verified}
-        image={posts.image}
-        text={posts.text}
-        avatar={posts.avatar}
+    {posts.map((singlePost)=>
+      <Post key={singlePost.userName}
+        displayName={singlePost.displayName}
+        userName={singlePost.userName}
+        verified={singlePost.verified}
+        image={singlePost.image}
+        text={singlePost.text}
+        avatar={singlePost.avatar}
 
       />
+
+    )}
+      
+
+    
       
     </div>
   )

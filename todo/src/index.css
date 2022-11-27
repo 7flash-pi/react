@@ -1,32 +1,72 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600;700&family=Oleo+Script&family=Oswald:wght@300&family=Roboto+Condensed&family=Space+Mono&family=Urbanist:ital,wght@0,100;0,200;0,300;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 *{
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
 }
-
 .app{
-  margin: 0 15vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
-     
-.todo__header{
+.todo__continer{
+  width: 90vw;
+  height: 60vh;
+  margin: 0 auto;
+  border: 2px solid #34bdeb;
+}
+
+.todo__continer > h2{
   display: flex;
-  flex-direction: row;
-  margin-top: 10vh;
+  justify-content: center;
+  padding: 20px;
+  font-weight: 800;
+  font-size: 25px;
 }
 .todo__todoForm{
   display: flex;
   justify-content: center;
+  padding: 20px;
+}
+
+.todo__todoForm > input{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.todo__todoForm > button{
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #34bdeb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.singletodo{
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  margin-top:5em;
-  padding:20px ;
+  padding: 10px;
+  margin: 0 auto;
+  width: 60%;
+  
 }
-.todo__container{
-  border: 5px solid var(--grey);
+.singletodo >p{
+  flex: 3;
+  font-weight: 400;
+  font-size: 20px;
 }
+.icons{
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+  color: #34bdeb !important;
+}
+.icons > DeleteIcon{
+  margin-left: 10px !important;
+}
+

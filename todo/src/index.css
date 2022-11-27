@@ -6,93 +6,27 @@
   box-sizing: border-box;
   
 }
+
 .app{
-  background-color: white;
+  margin: 0 15vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-family: 'Edu TAS Beginner', cursive;
-  font-family: 'Oleo Script', cursive;
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-family: 'Space Mono', monospace;
-  font-family: 'Urbanist', sans-serif;
-  margin: 0 auto;
+  align-items: center;
   flex-direction: column;
 }
-.header{
-  margin:3rem 0 3rem 0;
-  text-transform: capitalize;
-}
-.todo-conatiner{
-  width: 80%;
-  height: 80%;
-  border: 3px solid black;
-  background-color: black;
-}
-.todo-form > input{
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  font-size: 12px;
-}
-
-.todo-form >button{
-  margin-left: 1em;
-  padding: 8px;
-  border-radius: 5px;
-  background-color: #52b788;
-  color: white;
-}
-.SigleTodo{
-  margin-top: 2rem;
+     
+.todo__header{
   display: flex;
   flex-direction: row;
+  margin-top: 10vh;
+}
+.todo__todoForm{
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  margin-top:5em;
+  padding:20px ;
 }
-.task{
-  flex:2;
-  display: flex;
-  justify-content: flex-start;
-}
-.btn{
-  flex: 3;
-  
-}
-.SigleTodo > p{
-  padding: 5px;
-}
-.del-btn{
-  margin: 0 5px;
-}
-.del-btn,.Completed-btn,.edit-btn{
-  padding: 3px;
-  border-radius: 2px;
-  text-transform: capitalize;
-  border: none;
-}
-.del-btn{
-  background-color: red;
-  color: white;
-}
-
-.Completed-btn{
-  background-color: rgb(144, 176, 245);
-  color: white;
-}
-
-.edit-btn{
-  background-color: #52b788;
-  color: white;
-}
-
-.done{
-  text-decoration: line-through;
-
-}
-.not-done{
-  text-decoration: none;
-  
+.todo__container{
+  border: 5px solid var(--grey);
 }

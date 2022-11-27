@@ -1,18 +1,17 @@
 import React  from 'react';
-import Todo from './components/Todo';
-import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
+
 
 const App = () => {
-
-
-  
   return (
     <div className='app'>
-     <div className="header">
-      <h1>What's up Today? </h1>
+     <h2 className='todo__header'>
+      What's Up Today?
+     </h2>
+     <div className="todo__container">
+        <TodoForm />
      </div>
-      <Todo />
-      <TodoList />
+     
     </div>
   )
 }

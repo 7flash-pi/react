@@ -1,25 +1,28 @@
 import React,{useState, useEffect } from 'react';
 import SingleTodo from './SingleTodo';
 import db from '../firebaseConfig';
-import {  onSnapshot, collection, query  } from "firebase/firestore";
+import {  onSnapshot, collection, query} from "firebase/firestore";
 
-const ShowList = () => {
+const ShowList = ( { setEdit}) => {
 
   const [todos,setTodos]=useState([]);
 
   useEffect(() => {
-      const q = query(collection(db, "todos"));
+
+       const q = query(collection(db, "todos"));
       const unsub = onSnapshot(q, (querySnapshot) => {
       const newtodos=querySnapshot.docs.map(d => d.data());
       setTodos(newtodos);
-      console.log();;
+      console.log();
     });
+
+
   },[])
 
   return (
     <div className='showlist'>
         {
-            todos.map( todo=> <SingleTodo text={todo.text} todoId={todo.id} key={todo.id} />)
+            todos.map( todo=> <SingleTodo text={todo.text} todoId={todo.id} key={todo.id}  setEdit={setEdit} />)
         }
        
       

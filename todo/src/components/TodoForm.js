@@ -1,25 +1,28 @@
 import React from 'react';
 import { useState } from 'react';
 import db from '../firebaseConfig';
-import { doc, addDoc,collection} from 'firebase/firestore';
+import { doc, setDoc} from 'firebase/firestore';
 
-const TodoForm = () => {
+const TodoForm = ({edit,setEdit}) => {
 
   const [input,setInput]=useState('');
+ 
 
   const addTodo=async(e)=>{
     e.preventDefault();
+    const dateId=new Date().getTime().toString();
     if(input){
-       await addDoc(collection(db,'todos'),{
-        text:input ,
-        id:new Date().getTime().toString()
-      });
-      
+        await setDoc(doc(db, "todos", dateId), {
+          text: input,
+          id: dateId
+        });
+      setInput('');
     }
-    setInput('');
-
-
+    if(edit){
+      setInput()
+    }
   }
+
   return (
     <div className='todo__todoForm'>
       
@@ -30,7 +33,6 @@ const TodoForm = () => {
        onChange={e => setInput(e.target.value)}/>
       <button type="submit" onClick={addTodo}>Add</button>
     
-
     </div>
   )
 }

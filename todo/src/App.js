@@ -4,7 +4,6 @@ import TodoForm from './components/TodoForm';
 
 
 const App = () => {
-  const [edit,setEdit] = useState(false);
 
   return (
     <div className='app'>
@@ -12,8 +11,8 @@ const App = () => {
          <h2>
           What's Up Today?
         </h2>
-        <TodoForm edit={edit} setEdit={setEdit} />
-        <ShowList setEdit={setEdit} />
+        <TodoForm  />
+        <ShowList  />
 
       </div>
   </div>

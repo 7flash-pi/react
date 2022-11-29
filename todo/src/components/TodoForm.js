@@ -10,7 +10,10 @@ const TodoForm = () => {
   const addTodo=async(e)=>{
     e.preventDefault();
     if(input){
-       await addDoc(collection(db,'todos'),{text:input});
+       await addDoc(collection(db,'todos'),{
+        text:input ,
+        id:new Date().getTime().toString()
+      });
       
     }
     setInput('');

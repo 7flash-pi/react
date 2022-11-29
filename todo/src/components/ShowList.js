@@ -8,18 +8,18 @@ const ShowList = () => {
   const [todos,setTodos]=useState([]);
 
   useEffect(() => {
-      const q = query(collection(db, "todos"))
+      const q = query(collection(db, "todos"));
       const unsub = onSnapshot(q, (querySnapshot) => {
       const newtodos=querySnapshot.docs.map(d => d.data());
       setTodos(newtodos);
-      console.log(newtodos);;
+      console.log();;
     });
   },[])
 
   return (
     <div className='showlist'>
         {
-            todos.map( todo=> <SingleTodo text={todo.text}/>)
+            todos.map( todo=> <SingleTodo text={todo.text} todoId={todo.id} key={todo.id} />)
         }
        
       

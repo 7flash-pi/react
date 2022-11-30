@@ -10,19 +10,25 @@ const AppProvider=({children})=>{
     const [input,setInput]=useState('');
     const [todos,setTodos]=useState([]);
     const [edit,setEdit]=useState(false);
+    const [editId,setEditId]=useState(null);
 
     //Adding Document or pushing new data to firebase 
     const addTodo=async(e)=>{
         e.preventDefault();
         const dateId=new Date().getTime().toString();
-        if(input &&  edit == false){
+        if(input &&  edit === false){
             await setDoc(doc(db, "todos", dateId), {
             text: input,
             id: dateId
             });
-        setInput('');
-        setEdit(false);
             } 
+        if(edit){
+            const conRef=doc(db,'todos',editId);
+            await updateDoc(conRef,{text:input});
+        }
+        setEdit(false);
+        setEditId(null);
+        setInput('')
         
     }
 
@@ -46,6 +52,7 @@ const AppProvider=({children})=>{
         todos,
         edit,
         setEdit,
+        setEditId
         }}>
         {children}
 

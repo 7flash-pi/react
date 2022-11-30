@@ -6,7 +6,7 @@ import { deleteDoc ,doc ,updateDoc  } from 'firebase/firestore';
 import { useGlobalContext } from './context';
 
 const SingleTodo = ({ text, todoId }) => {
-  const { setEdit }=useGlobalContext();
+  const { setEdit,setEditId, setInput }=useGlobalContext();
 
   //Deleting Document
   const deleteTodo = async(e) => {
@@ -16,6 +16,12 @@ const SingleTodo = ({ text, todoId }) => {
      }
 
   //Updating Document
+  const updateTodo= (e) =>{
+    e.preventDefault();
+    setEdit(true);
+    setEditId(todoId);
+    setInput(text);
+    }
   
 
   return (
@@ -23,7 +29,7 @@ const SingleTodo = ({ text, todoId }) => {
         <p>{text}</p>
         <div className="icons">
             <DeleteIcon onClick={deleteTodo}/>
-            <EditIcon  />
+            <EditIcon onClick={updateTodo}  />
 
         </div>
         

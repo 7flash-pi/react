@@ -4,12 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-.App{
+.app{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 4em;
+  margin-top: 30vh;
   font-family: 'Edu TAS Beginner', cursive;
   font-family: 'Fragment Mono', monospace;
   font-family: 'Oleo Script', cursive;
@@ -25,9 +25,10 @@
 
 .stopwatch-container{
   margin-top: 2em;
-  padding: 25px;
+  padding: 30px;
   border: 1px solid black;
   border-radius: 20px;
+  background-color: azure;
 }
 .stopwatch-container >p{
   font-size: 40px;
@@ -42,6 +43,10 @@
   border-radius: 5px;
   border: none;
   text-transform: capitalize;
+  margin-top: 1em;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: rgb(38, 221, 221);
 }
 .start{
   color: white;

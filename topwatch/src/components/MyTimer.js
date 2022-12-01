@@ -23,7 +23,7 @@ const MyTimer = ({ expiryTimestamp }) => {
         <p>{isRunning? 'Running' :'Not Running'}</p>
         <button onClick={start} className='btn'>Start</button>
         <button onClick={pause} className='btn'>Pause</button>
-        <button onClick={resume} className='btn'>Resume</button>
+        <button onClick={resume}  className='btn'>Resume</button>
 
       
     </div>

@@ -7,7 +7,7 @@ const Setting = () => {
     const [newTimer,setNewTimer]=useState({
         work:2,
         short:0.1,
-        long:1,
+        long:2,
         active:'work'
     });
 
@@ -20,21 +20,21 @@ const Setting = () => {
             case 'work' : 
                 setNewTimer({
                     ...newTimer,
-                    work:parseInt(value)
-                })
+                    work:value
+                 })
                 break;
             
             case 'shortBreak':
                 setNewTimer({
                     ...newTimer,
-                    short:parseInt(value)
+                    short:value
                 })
                 break;
 
              case 'longBreak':
                 setNewTimer({
                     ...newTimer,
-                    long:parseInt(value)
+                    long:value
                 })
                 break;
         }
@@ -55,7 +55,7 @@ const Setting = () => {
                 <input type="text" name='shortBreak' onChange={handleChange} value={newTimer.short} />
                 <input type="text" name='longBreak' onChange={handleChange} value={newTimer.long} />
             </div>
-            <Button title='setTimer' _callback={ handleSubmit }/>
+            <Button title='Set Timer' _callback={ handleSubmit }/>
         </form>
       
     </div>

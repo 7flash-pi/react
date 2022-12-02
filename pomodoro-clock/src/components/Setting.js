@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Button from './Button';
+import { useGlobalContext } from '../context/SettingContext';
 
 const Setting = () => {
 
+    const { updateExecute }=useGlobalContext();
     //input handling useState
     const [newTimer,setNewTimer]=useState({
         work:2,
@@ -44,6 +46,7 @@ const Setting = () => {
 
     const handleSubmit = e =>{
         e.preventDefault();
+        updateExecute(newTimer);
 
     }
 

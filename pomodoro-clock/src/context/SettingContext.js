@@ -2,11 +2,17 @@ import React ,{ useContext, useState } from 'react';
 
 const AppContext=React.createContext();
 
-const AppProvider=({children}) =>{
+const AppProvider=(props) =>{
 
-    const [pomdoro,setPomdoro]=useState(0);
+    const [pomodoro,setPomodoro]=useState(0);
     const [executing,setExecuting]=useState({});
     const [startanimate,setStartAnimate]=useState(false);
+
+    const setCurrentTimer = activeState =>{
+        setExecuting({...executing, 
+        active:activeState})
+        setTimerTime(executing);
+    }
 
 
     const startTimer = () =>{
@@ -23,7 +29,7 @@ const AppProvider=({children}) =>{
 
     const settingBtn = () => {
         setExecuting({});
-        setPomdoro(0);
+        setPomodoro(0);
     }
 
     const updateExecute = updatedSetting =>{
@@ -34,30 +40,48 @@ const AppProvider=({children}) =>{
     const setTimerTime = evaluate =>{
         switch(evaluate.active){
             case'work':
-                setPomdoro(evaluate.work);
+                setPomodoro(evaluate.work);
                 break;
 
             case'short':
-                setPomdoro(evaluate.short);
+                setPomodoro(evaluate.short);
                 break;
             
             case'long':
-                setPomdoro(evaluate.long);
+                setPomodoro(evaluate.long);
                 break;
 
             default:
-                setPomdoro(0);
+                setPomodoro(0);
                 break;
         }
 
     }
+
+    const children = remainingTime =>{
+
+        const minutes=Math.floor(remainingTime /60);
+        const seconds = remainingTime % 60 ;
+        return `${minutes}:${seconds}`;
+
+    }
+
+
     return  <AppContext.Provider value={{
         stopTimer,
         startTimer,
         pauseTimer,
-        updateExecute
-    }}>
-        {children}
+        updateExecute,
+        pomodoro,
+        executing,
+        startanimate,
+        settingBtn,
+        updateExecute,
+        children
+  }}>
+
+        {props.children}
+
     </AppContext.Provider>
 }
 

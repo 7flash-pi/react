@@ -1,16 +1,72 @@
-import './App.css';
-import React from 'react';
-import Setting from './components/Setting';
+import React, { useEffect} from 'react'
+import Button from './components/Button'
+import CountDownAnimation from './components/CountDownAnimation'
+import SetPomodoro from './components/SetPomodoro'
+import { useGlobalContext } from './context/SettingContext'
 
+const App = () => {
 
-function App() {
+  const {
+    pomodoro,
+    executing,
+    startAnimate,
+    children,
+    startTimer,
+    pauseTimer,
+    updateExecute,
+    setCurrentTimer,
+    SettingsBtn } = useGlobalContext();
+
+    useEffect(() => {updateExecute(executing)}, [executing, startAnimate])
+
   return (
     <div className="container">
-      <h1>pomdoro</h1>
-      <small>Be Productive</small>
-      <Setting />
+      <h1>Pomodoro</h1>
+      <small>Be productive the right way.</small>
+      {pomodoro !== 0 ?
+      <>
+        <ul className="labels">
+          <li>
+            <Button 
+              title="Work" 
+              activeClass={executing.active === 'work' ? 'active-label' : undefined} 
+              _callback={() => setCurrentTimer('work')} 
+            />
+          </li>
+          <li>
+            <Button 
+              title="Short Break" 
+              activeClass={executing.active === 'short' ? 'active-label' : undefined} 
+              _callback={() => setCurrentTimer('short')} 
+            />
+          </li>
+          <li>
+            <Button 
+              title="Long Break" 
+              activeClass={executing.active === 'long' ? 'active-label' : undefined} 
+              _callback={() => setCurrentTimer('long')} 
+            />
+          </li>
+        </ul>
+        <Button title="Settings" _callback={SettingsBtn} />
+        <div className="timer-container">
+          <div className="time-wrapper">
+              <CountDownAnimation
+                key={pomodoro} 
+                timer={pomodoro} 
+                animate={startAnimate}
+              >
+                {children}
+              </CountDownAnimation>
+          </div>
+        </div>
+        <div className="button-wrapper">
+          <Button title="Start" activeClass={!startAnimate ? 'active' : undefined} _callback={startTimer} />
+          <Button title="Pause" activeClass={startAnimate ? 'active' : undefined} _callback={pauseTimer} />
+        </div>
+      </> : <SetPomodoro />}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
